@@ -5,11 +5,34 @@
     <title>Title</title>
 </head>
 <body>
-<form action="helloFormGet" method="POST">
-    网址名：<input type="text" name="name">
-    <br/>
-    url：<input type="text" name="url"/>
-    <input type="submit" value="提交"/>
-</form>
+    <form action="/form" method="POST">
+        网址名：<input type="text" name="name">
+        <br/>
+        url：<input type="text" name="url"/>
+        <input type="submit" value="提交"/>
+    </form>
+
+    <form method="post" action="/upload" enctype="multipart/form-data">
+        选择文件:<input type="file" name="uploadFile">
+        <br/>
+        <input type="submit" value="上传">
+    </form>
+
+    <!--<video width="320" height="240" controls>
+        <source src="/video/movie.mp4" type="video/mp4">
+        您的浏览器不支持Video标签。
+    </video>-->
+
+
+    <!--<script type="text/javascript">
+        var db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
+
+        db.transaction(function (tx) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS LOGS (id unique, log)');
+            tx.executeSql('INSERT INTO LOGS (id, log) VALUES (1, "菜鸟教程")');
+            tx.executeSql('INSERT INTO LOGS (id, log) VALUES (2, "www.runoob.com")');
+        });
+    </script>-->
+
 </body>
 </html>
