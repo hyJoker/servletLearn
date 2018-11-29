@@ -1,22 +1,45 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>servlet</display-name>
-  
-  <welcome-file-list>
-    <welcome-file>/page/index.html</welcome-file>
-  </welcome-file-list>
+    <display-name>servlet</display-name>
 
-  <!--<servlet>
-    <servlet-name>helloworld</servlet-name>
-    <servlet-class>com.servlet.HelloWorld</servlet-class>
-  </servlet>
+    <welcome-file-list>
+        <welcome-file>/page/index.html</welcome-file>
+    </welcome-file-list>
 
-  <servlet-mapping>
-    <servlet-name>helloworld</servlet-name>
-    <url-pattern>/hello</url-pattern>
-  </servlet-mapping>-->
+    <filter>
+        <filter-name>logfilter</filter-name>
+        <filter-class>com.filter.LogFilter</filter-class>
+        <init-param>
+            <param-name>site</param-name>
+            <param-value>zhangsan</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>logfilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/error</location>
+    </error-page>
+    <!--<servlet>
+      <servlet-name>helloworld</servlet-name>
+      <servlet-class>com.servlet.HelloWorld</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+      <servlet-name>helloworld</servlet-name>
+      <url-pattern>/hello</url-pattern>
+    </servlet-mapping>-->
 
 </web-app>
